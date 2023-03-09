@@ -8,14 +8,19 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+
   public user: any = [];
+  public repos: any = [];
 
   constructor(private _githubService: GithubService) {}
 
   ngOnInit() {
     this._githubService.getUser().subscribe(user => {
       this.user = user;
-      console.log(user);
+    });
+
+    this._githubService.getRepos().subscribe(repos => {
+      this.repos = repos;
     });
   }
 }
