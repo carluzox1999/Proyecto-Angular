@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  user: any;
+  public user: any = [];
 
   constructor(private _githubService: GithubService) {}
 
