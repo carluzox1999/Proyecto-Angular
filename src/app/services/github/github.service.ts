@@ -21,4 +21,8 @@ export class GithubService {
       return this._http.get('https://api.github.com/users/' + this.username + '/repos')
         .pipe(map(res => res));
   }
+
+  updateUser(username: string){
+    this.username = username;
+  }
 }
